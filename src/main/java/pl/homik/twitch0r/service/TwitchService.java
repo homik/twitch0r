@@ -1,12 +1,17 @@
 package pl.homik.twitch0r.service;
 
 import org.json.JSONObject;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.homik.twitch0r.pojo.TwitchAccessToken;
 
-import java.net.URL;
-import java.util.*;
+import javax.xml.ws.ServiceMode;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.SplittableRandom;
 
+@Service
 public class TwitchService {
 
     private static final String USHER_API = "http://usher.twitch.tv/api/channel/hls/{channel}.m3u8?player=twitchweb" +
